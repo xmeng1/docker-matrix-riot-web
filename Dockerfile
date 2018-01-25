@@ -1,6 +1,6 @@
 FROM nginx:1.13.6-alpine
 
-ARG RIOT_WEB_VERSION="0.13.1"
+ARG RIOT_WEB_VERSION="0.13.4"
 
 RUN set -ex \
     && apk add --update \
