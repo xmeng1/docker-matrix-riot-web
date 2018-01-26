@@ -16,7 +16,7 @@ RUN set -ex \
     && mkdir -p /var/www \
     && mv riot-v${RIOT_WEB_VERSION} /var/www/riot \
     && cp /config.json /var/www/riot/config.json \
-    && rm /config.json
+    && rm /config.json \
     && apk del ca-certificates openssl \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/*
