@@ -6,8 +6,8 @@ if [ -z "${HOME_SERVER_URL}" ]; then
 fi
 
 if [ -z "${IDENTITY_SERVER_URL}" ]; then
-	echo "IDENTITY_SERVER_URL not set, 'https://matrix.deepnetsecurity.com:8449' by default"
-	export IDENTITY_SERVER_URL="https://matrix.deepnetsecurity.com:8449"
+	echo "IDENTITY_SERVER_URL not set, 'https://vector.im' by default"
+	export IDENTITY_SERVER_URL="https://vector.im"
 fi
 
 if [ -z "${BRAND}" ]; then
