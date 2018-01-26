@@ -1,6 +1,8 @@
 FROM nginx:1.13.6-alpine
 
 ARG RIOT_WEB_VERSION="0.13.4"
+# copy config file
+COPY config/config.json /config.json
 
 RUN set -ex \
     && apk add --update \
@@ -13,7 +15,8 @@ RUN set -ex \
     && tar -xzvf riot-v${RIOT_WEB_VERSION}.tar.gz \
     && mkdir -p /var/www \
     && mv riot-v${RIOT_WEB_VERSION} /var/www/riot \
-    && cp /var/www/riot/config.sample.json /var/www/riot/config.json \
+    && rm /var/www/riot/config.json \
+    && mv /config.json /var/www/riot/config.json \
     && apk del ca-certificates openssl \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/*
