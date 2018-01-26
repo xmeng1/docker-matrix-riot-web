@@ -15,8 +15,8 @@ RUN set -ex \
     && tar -xzvf riot-v${RIOT_WEB_VERSION}.tar.gz \
     && mkdir -p /var/www \
     && mv riot-v${RIOT_WEB_VERSION} /var/www/riot \
-    && rm /var/www/riot/config.json \
-    && mv /config.json /var/www/riot/config.json \
+    && cp /config.json /var/www/riot/config.json \
+    && rm /config.json
     && apk del ca-certificates openssl \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/*
